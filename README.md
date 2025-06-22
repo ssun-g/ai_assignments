@@ -125,7 +125,7 @@ else:
 ```python
 torch.onnx.export(model,
                   dummy_input,
-                  "conv_net.onnx",
+                  "./checkpoints/conv_net.onnx",
                   input_names=['input'],
                   output_names=['output'],
                   dynamic_axes={'input': {0: 'batch_size'}})  # 0번째 차원 dynamic
@@ -140,11 +140,12 @@ dataset = datasets.ImageFolder("./data/train/", transform=transform)  # 전체 �
 calibration_loader = DataLoader(dataset, batch_size=CFG['bs'], shuffle=False)
 data_reader = ImageFolderDataReader(calibration_loader)
 
-quantize_static(model_input="conv_net.onnx",
-                model_output="conv_net_int8.onnx",
+quantize_static(model_input="./checkpoints/conv_net.onnx",
+                model_output="./checkpoints/conv_net_int8.onnx",
                 calibration_data_reader=data_reader,  # calibration data로 전체 데이터 사용
-                quant_format=QuantFormat.QOperator,
-                weight_type=QuantType.QInt8)
+                quant_format=QuantFormat.QDQ,
+                weight_type=QuantType.QInt8,
+                activation_type=QuantType.QInt8)
 ```
 
 
