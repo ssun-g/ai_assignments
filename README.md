@@ -1,24 +1,22 @@
-# README.md
-
 # 실험 환경
 
 | **OS** | Windows 11 |
 | --- | --- |
 | **Python version** | 3.10.18 |
 
----
+
 
 # 실행 방법
 
 1. Git repo 복사
 
-```python
+```
 git clone https://github.com/ssun-g/ai_assignments.git
 ```
 
 1. 패키지 설치
 
-```python
+```
 cd ai_assignments
 pip install -r requirements.in
 ```
@@ -47,7 +45,7 @@ pip install -r requirements.in
 3. `onnx&quant.ipynb`: 학습 완료된 모델 ONNX 변환 및 INT8 양자화 수행
 4. `compare_models.ipynb`: 모델 성능 비교(전이 학습 모델, ONNX 변환 모델, INT8 양자화 모델)
 
----
+
 
 # EDA.ipynb - EDA (데이터 시각화)
 
@@ -77,7 +75,7 @@ pip install -r requirements.in
 
 - 모델 학습 시 tomato 클래스에 속하는 데이터는 이미지 증강을 적용하여 학습
 
----
+
 
 # train.ipynb - 모델 학습 및 평가
 
@@ -116,7 +114,7 @@ else:
 
 ![Image](https://github.com/user-attachments/assets/c135f6ae-2437-4ae8-abad-140647fdf5c3)
 
----
+
 
 # onnx&quant.ipynb - 모델 ONNX 변환 및 INT8 양자화
 
@@ -149,7 +147,7 @@ quantize_static(model_input="conv_net.onnx",
                 weight_type=QuantType.QInt8)
 ```
 
----
+
 
 # compare_models.ipynb - 모델 결과 비교
 
