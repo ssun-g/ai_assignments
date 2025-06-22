@@ -14,14 +14,14 @@
 git clone https://github.com/ssun-g/ai_assignments.git
 ```
 
-1. 패키지 설치
+2. 패키지 설치
 
 ```
 cd ai_assignments
 pip install -r requirements.in
 ```
 
-1. 학습 데이터 다운로드(이후 폴더 구조는 아래와 같아야 함)
+3. 학습 데이터 다운로드(이후 폴더 구조는 아래와 같아야 함)
 
 ```
 ├─checkpoints/
@@ -96,8 +96,8 @@ else:
     image = self.basic_transform(image)
 ```
 
-1. Test dataset에 대해 시각화 및 모델 평가
-2. 학습 완료된 모델의 attention 시각화 (Grad-CAM)
+5. Test dataset에 대해 시각화 및 모델 평가
+6. 학습 완료된 모델의 attention 시각화 (Grad-CAM)
 
 ### 평가 지표: F1 score(macro)
 
